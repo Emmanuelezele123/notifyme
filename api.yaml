@@ -1,0 +1,87 @@
+swagger: "2.0"
+host: localhost:3000
+info: 
+ title: SABO API
+ description: SABO SERVICES
+ version: 1.0
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+
+paths:
+ /notification/addNew:
+  post:
+   summary: Create a new notiifcation
+   tags:
+    - Notification
+   produces: 
+    - application/json
+   consumes:
+    - application/json
+   parameters:
+   - in: body
+     name: Notification
+     schema:
+      type: object
+      properties: 
+       post:
+        type: string
+       
+      
+   responses:
+    200:
+     description: Notification created
+     schema:
+      type: object
+      properties: 
+       success:
+        type: boolean
+        example: true
+       
+      
+    401:
+     description: Notification was not created
+    500:
+     description: Notification was not created too
+
+ /notification/getUnread:
+  get:
+   summary: get all unread notification
+   tags:
+    - Notification
+   produces: 
+    - application/json
+  
+    
+      
+   responses:
+    200:
+     description: Got unread notifications
+     
+      
+    401:
+     description: Cant get notifications
+     
+      
+       
+    
+ /notification/getNotifications:
+  get:
+   summary: get all notifications
+   tags:
+    - Notification
+   produces: 
+    - application/json
+  
+    
+      
+   responses:
+    200:
+     description: Got all notifications
+     
+      
+    401:
+     description: Cant get notifications
+     
