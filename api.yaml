@@ -1,8 +1,8 @@
 swagger: "2.0"
-host: localhost:3000
+host: notifymeez.onrender.com
 info: 
- title: SABO API
- description: SABO SERVICES
+ title: Notifications API
+ description: Notification SERVICES
  version: 1.0
 securityDefinitions:
   Bearer:
